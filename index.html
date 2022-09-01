@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução ao HTML:5</title>
+
+    <style>
+      #main header {
+        text-align: left;
+      }
+
+      #main {
+        position: absolute;
+        max-width: 1400px;
+        margin-left: 310px;
+        padding: 20px;
+        margin-bottom: 110px;
+      }
+
+      .main-section > header > h2 {
+        margin-bottom: 30px;
+      }
+
+      #navbar {
+        position: fixed;
+        min-width: 290px;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        height: 100%;
+        border-right: solid;
+        border-color: rgba(0, 22, 22, 0.4);
+      }
+
+      #navbar ul {
+        height: 88%;
+        padding: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      #navbar li {
+        color: #4d4e53;
+        border-top: 1px solid;
+        list-style: none;
+        position: relative;
+        width: 100%;
+      }
+
+      #navbar a {
+        display: block;
+        padding: 10px 30px;
+        color: #4d4e53;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      hr {
+        margin: 50px 0;
+      }
+
+      pre {
+        display: inline-block;
+        margin-left: 100px;
+      }
+
+      pre > code {
+        display: block;
+        text-align: left;
+        position: relative;
+        word-break: normal;
+        word-wrap: normal;
+        line-height: 1.5;
+        background-color: #f7f7f7;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      #links > article > ol > pre {
+        margin-left: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header><h1>Documentação HTML:5</h1></header>
+      <ul>
+        <li><a href="#introduction" class="nav-link">Introdução</a></li>
+        <li><a href="#what-is-html" class="nav-link">O que é HTML5?</a></li>
+        <li>
+          <a href="#html-element" class="nav-link"
+            >Anatomia de um elemento HTML</a
+          >
+        </li>
+        <li>
+          <a href="#nesting-elements" class="nav-link">Aninhando Elementos</a>
+        </li>
+        <li>
+          <a href="#html-document" class="nav-link"
+            >Anatomia de um documento HTML</a
+          >
+        </li>
+        <li><a href="#images" class="nav-link">Imagens</a></li>
+        <li><a href="#text" class="nav-link">Textos</a></li>
+        <li><a href="#paragraphs" class="nav-link">Parágrafos</a></li>
+        <li><a href="#lists" class="nav-link">Listas</a></li>
+        <li><a href="#links" class="nav-link">Links</a></li>
+      </ul>
+    </nav>
+
+    <main id="main">
+      <section class="main-section" id="introduction">
+        <header><h2>Introdução</h2></header>
+        <article>
+          <p>
+            HTML (Linguagem de Marcação de Hipertexto) é o código que você usa
+            para estruturar uma página web e seu conteúdo. Por exemplo, o
+            conteúdo pode ser estruturado em parágrafos, em uma lista com
+            marcadores ou usando imagens e tabelas. Como o título sugere, este
+            artigo fornecerá uma compreensão básica do HTML e suas funções.
+          </p>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="what-is-html">
+        <header><h2>O que é HTML5?</h2></header>
+        <article>
+          <p>
+            HTML5 é uma linguagem de marcação usada para estruturar e apresentar
+            conteúdo na World Wide Web. É a quinta e última versão HTML
+            principal que é uma recomendação do World Wide Web Consortium (W3C).
+            A especificação atual é conhecida como HTML Living Standard. Ele é
+            mantido pelo Web Hypertext Application Technology Working Group
+            (WHATWG), um consórcio dos principais fornecedores de navegadores
+            (Apple, Google, Mozilla e Microsoft).
+          </p>
+          <p>
+            O HTML5 foi lançado pela primeira vez em um formulário público em 22
+            de janeiro de 2008, com uma grande atualização e status de
+            "Recomendação W3C" em outubro de 2014. Seus objetivos eram melhorar
+            a linguagem com suporte para os mais recentes recursos multimídia e
+            outros novos; manter a linguagem facilmente legível por humanos e
+            consistentemente compreendida por computadores e dispositivos como
+            navegadores web, analisadores, etc., sem a rigidez do XHTML; e para
+            permanecer compatível com software mais antigo. HTML5 destina-se a
+            incluir não apenas HTML 4, mas também XHTML 1 e DOM Nível 2 HTML.
+          </p>
+          <p>
+            HTML5 inclui modelos de processamento detalhados para encorajar
+            implementações mais interoperáveis; ele estende, melhora e
+            racionaliza a marcação disponível para documentos e introduz
+            marcação e interfaces de programação de aplicativos (APIs) para
+            aplicativos web complexos. Pelas mesmas razões, o HTML5 também é um
+            candidato para aplicativos móveis multiplataforma porque inclui
+            recursos projetados com dispositivos de baixa potência em mente.
+          </p>
+          <p>
+            Muitos novos recursos sintáticos estão incluídos. Para incluir e
+            lidar nativamente com conteúdo multimídia e gráfico, os novos
+            elementos <b>&lt;video&gt;</b>, <b>&lt;audio&gt;</b> e
+            <b>&lt;canvas&gt;</b> foram adicionados, seções expansíveis são
+            implementadas nativamente através de
+            <b>&lt;summary&gt;...&lt;/summary&gt;</b> e
+            <b>&lt;details&gt;... &lt;/details&gt;</b> em vez de depender de CSS
+            ou JavaScript, e também foi adicionado suporte para conteúdo de
+            gráficos vetoriais escaláveis (SVG) e MathML para fórmulas
+            matemáticas. Para enriquecer o conteúdo semântico dos documentos,
+            novos elementos de estrutura de página como <b>&lt;main&gt;</b>,
+            <b>&lt;section&gt;</b>, <b>&lt;article&gt;</b>,
+            <b>&lt;header&gt;</b>, <b>&lt;footer&gt;</b>, <b>&lt;aside&gt;</b>,
+            <b>&lt;nav&gt;</b> e <b>&lt;figure&gt;</b> são adicionados. Novos
+            atributos foram introduzidos, alguns elementos e atributos foram
+            removidos e outros como <b>&lt;a&gt;</b>, <b>&lt;cite&gt;</b> e
+            <b>&lt;menu&gt;</b> foram alterados, redefinidos ou padronizados. As
+            APIs e o Document Object Model (DOM) agora são partes fundamentais
+            da especificação HTML5, e o HTML5 também define melhor o
+            processamento de quaisquer documentos inválidos.
+          </p>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="html-element">
+        <header><h2>Anatomia de um elemento HTML</h2></header>
+        <article>
+          <figure>
+            <img
+              src="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/HTML_basics/gato-rabujento-pequeno.png"
+              alt="imagem de exemplo de um elemento html"
+            />
+          </figure>
+
+          <p>As principais partes de um elemento são:</p>
+          <ol>
+            <li>
+              A <b>tag de abertura</b>: Consiste no nome do elemento (no caso,
+              p), envolvido em <b>parênteses angulares</b> de abertura e
+              fechamento. Isso demonstra onde o elemento começa, ou onde seu
+              efeito se inicia — nesse caso, onde é o começo do parágrafo.
+            </li>
+            <li>
+              A <b>tag de fechamento</b>: Isso é a mesma coisa que a tag de
+              abertura, exceto que inclui uma barra antes do nome do elemento.
+              Isso demonstra onde o elemento acaba — nesse caso, onde é o fim do
+              parágrafo. Esquecer de incluir uma tag de fechamento é um dos
+              erros mais comuns de iniciantes e pode levar a resultados
+              estranhos.
+            </li>
+            <li>
+              O <b>conteúdo</b>: Esse é o conteúdo do elemento, que nesse caso é
+              apenas texto.
+            </li>
+            <li>
+              O <b>elemento</b>: A tag de abertura, a de fechamento e o conteúdo
+              formam o elemento.
+            </li>
+          </ol>
+          <p>Elementos também podem ter atributos, que parecem assim:</p>
+          <figure>
+            <img
+              src="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/HTML_basics/gato-rabujento-atributo-pequeno.png"
+              alt="imagem de exemplo de um elemento html que recebe um atributo do tipo classe"
+            />
+          </figure>
+          <p>
+            Atributos contém informação extra sobre o elemento que você não quer
+            que apareça no conteúdo real. Aqui, <span>class</span> é o nome do
+            atributo e <span>editor-note</span> é o valor do atributo. O
+            atributo <span>class</span> permite que você forneça ao elemento um
+            identificador que possa ser usado posteriormente para aplicar ao
+            elemento informações de estilo e outras coisas.
+          </p>
+          <p>Um atributo sempre deve ter:</p>
+          <ol>
+            <li>
+              Um espaço entre ele e o nome do elemento (ou o atributo anterior,
+              se o elemento já tiver um).
+            </li>
+            <li>O nome do atributo, seguido por um sinal de igual.</li>
+            <li>
+              Aspas de abertura e fechamento, envolvendo todo o valor do
+              atributo.
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="nesting-elements">
+        <header><h2>Aninhando Elementos</h2></header>
+        <article>
+          <p>
+            Você pode colocar elementos dentro de outros elementos também — isso
+            é chamado de aninhamento. Se quiséssemos afirmar que nosso gato é
+            muito mal-humorado, poderíamos envolver a palavra "muito" em um
+            elemento <b>&lt;strong&gt;</b>, o que significa que a palavra deve
+            ser fortemente enfatizada:
+          </p>
+          <code>
+            &lt;p&gt; Meu gatinho é &lt;strong&gt; muito &lt;/strong&gt; mal
+            humorado &lt;/p&gt;
+          </code>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="html-document">
+        <header><h2>Anatomia de um documento HTML</h2></header>
+        <article>
+          <p>
+            Isso resume o básico dos elementos HTML individuais, mas eles não
+            são úteis por si só. Agora vamos ver como elementos individuais são
+            combinados para formar uma página HTML inteira. Vamos visitar
+            novamente os códigos que colocamos no exemplo de
+            <code>index.html</code>:
+          </p>
+
+          <pre>
+            <code>
+    &lt;DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+          &lt;meta charset="utf-8"&gt;
+          &lt;title&gt; Minha página de teste &lt;title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+          &lt;img src="imagens/firefox-icon.png" alt="minha página de teste" &gt;   
+        &lt;/body&gt;
+      &lt;/html&gt;
+            </code>
+          </pre>
+
+          <p>Aqui nós temos:</p>
+
+          <ul>
+            <li>
+              <b>&lt;!DOCTYPE html&gt;</b> — o <code>doctype</code>. É a parte
+              inicial obrigatória do documento. Nas névoas do tempo, quando o
+              HTML era novo (por volta de 1991/2), doctypes eram criados para
+              agir como links para um conjunto de regras que a página HTML tinha
+              que seguir para ser considerada um bom HTML, o que poderia
+              significar checagem automática de erros e outras coisas úteis. No
+              entanto, atualmente, eles não fazem muito sentido e são
+              basicamente necessários apenas para garantir que o documento se
+              comporte corretamente. Isso é tudo que você precisa saber agora.
+            </li>
+            <li>
+              <b>&lt;html&gt;&lt;/html&gt;</b> — o elemento <code>html</code>.
+              Esse elemento envolve todo o conteúdo da página e às vezes é
+              conhecido como o elemento raiz.
+            </li>
+            <li>
+              <b>&lt;head&gt;&lt;/head&gt;</b> — o elemento <code>head</code>.
+              Esse elemento age como um recipiente de tudo o que você deseja
+              incluir em uma página HTML que não é o conteúdo que você quer
+              mostrar para quem vê sua página. Isso inclui coisas como
+              palavras-chave e uma descrição que você quer que apareça nos
+              resultados de busca, CSS para dar estilo ao conteúdo, declarações
+              de conjuntos de caracteres e etc.
+            </li>
+            <li>
+              <b>&lt;meta charset="utf-8"&gt;</b> — esse elemento define o
+              conjunto de caracteres que seu documento deve usar para o UTF-8,
+              que inclui praticamente todos os caracteres da grande maioria dos
+              idiomas escritos. Essencialmente, agora ele pode manipular
+              qualquer conteúdo textual que você possa colocar. Não há razão
+              para não definir isso e assim pode ajudar a evitar alguns
+              problemas no futuro.
+            </li>
+            <li>
+              <b>&lt;title&gt;&lt;/title&gt;</b> — o elemento
+              <code>title</code>. Ele define o título da sua página, que é o
+              título que aparece na guia do navegador onde sua página é
+              carregada. Ele também é usado para descrever a página quando você
+              a adiciona aos favoritos.
+            </li>
+            <li>
+              <b>&lt;body&gt;&lt;/body&gt;</b> — o elemento <code>body</code>.
+              Contém todo o conteúdo que você quer mostrar ao público que visita
+              sua página, seja texto, imagens, vídeos, jogos, faixas de áudio
+              reproduzíveis ou qualquer outra coisa.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="images">
+        <header><h2>Imagens</h2></header>
+        <article>
+          <p>
+            Vamos voltar nossa atenção para o elemento &lt;img&gt; novamente:
+          </p>
+
+          <pre>
+              <code>
+    &lt;img src="imagens/firefox-icon.png" alt="Minha imagem de teste"&gt;    
+              </code>
+            </pre>
+
+          <p>
+            Como dissemos antes, isso incorpora uma imagem na nossa página na
+            posição que aparece. Isso é feito pelo atributo
+            <code>src</code> (source), que contém o caminho para nosso arquivo
+            de imagem.
+          </p>
+          <p>
+            Incluímos também um atributo <code>alt</code> (alternative). Neste
+            atributo, você especifica um texto descritivo para usuários que não
+            podem ver a imagem, possivelmente devido aos seguintes motivos:
+          </p>
+          <ol>
+            <li>
+              Eles são deficientes visuais. Usuários com deficiências visuais
+              significativas costumam usar ferramentas chamadas leitores de tela
+              para ler o texto alternativo para eles.
+            </li>
+            <li>
+              Algo deu errado, fazendo com que a imagem não seja exibida. Por
+              exemplo, tente alterar deliberadamente o caminho dentro do
+              atributo <code>src</code> para torná-lo incorreto. Se você salvar
+              e recarregar a página, você deve ver algo assim no lugar da
+              imagem:
+            </li>
+          </ol>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="text">
+        <header><h2>Marcando o texto</h2></header>
+        <article>
+          <p>
+            Essa seção abordará alguns dos elementos HTML essenciais que você
+            usará para marcar o texto.
+          </p>
+
+          <h3>Cabeçalhos</h3>
+          <p>
+            Os elementos de cabeçalhos permitem especificar que certas partes do
+            seu conteúdo são títulos ou subtítulos. Da mesma forma que um livro
+            tem o título principal e os capítulos possuem títulos e subtítulos,
+            um documento HTML também tem. HTML contém 6 níveis de título,
+            &lt;h1&gt; (en-US) - &lt;h6&gt; (en-US), embora você normalmente só
+            use de 3 a 4:
+          </p>
+
+          <pre>
+            <code>
+    &lt;h1&gt;Meu título principal&lt;/h1&gt;    
+    &lt;h2&gt;Meu título de alto Nível&lt;/h2&gt;    
+    &lt;h3&gt;Meu subtítulo&lt;/h3&gt;
+    &lt;h4&gt;Meu segundo subtítulo&lt;/h4&gt;
+            </code>
+          </pre>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="paragraphs">
+        <header><h2>Parágrafo</h2></header>
+        <article>
+          <p>
+            Como explicado acima, os elementos <code>&lt;p&gt;</code> são para
+            conter parágrafos de texto; você os usará com frequência ao marcar
+            um conteúdo de texto regular:
+          </p>
+
+          <pre>
+              <code>
+      &lt;p&gt;Este é um parágrafo simples&lt;/p&gt;    
+              </code>
+            </pre>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="lists">
+        <header><h2>Listas</h2></header>
+        <article>
+          <p>
+            Muito do conteúdo da web é de listas e o HTML tem elementos
+            especiais para elas. Listas de marcação sempre consistem em pelo
+            menos 2 elementos. Os tipos mais comuns de lista são ordenadas e não
+            ordenadas:
+          </p>
+
+          <ol>
+            <li>
+              <b>Listas não ordenadas</b> são para listas onde a ordem dos itens
+              não importa, como uma lista de compras, por exemplo. Essas são
+              envolvidas em um elemento <code>&lt;ul&gt;</code>.
+            </li>
+            <li>
+              <b>Listas Ordenadas</b> são para listas onde a ordem dos itens
+              importa, como uma receita. Essas são envolvidas em um elemento
+              <code>&lt;ol&gt;</code>.
+            </li>
+          </ol>
+
+          <p>
+            Cada item dentro das listas é posto dentro de um elemento
+            <code>&lt;li&gt;</code> (item de lista).
+          </p>
+          <p>
+            Por exemplo, se nós quisermos tornar uma parte de um parágrafo numa
+            lista:
+          </p>
+
+          <pre>
+              <code>
+      &lt;p&gt;Na Mozilla, somos uma comunidade global de tecnólogos, pensadores e construtores trabalhando juntos ...&lt/p&gt;    
+              </code>
+            </pre>
+
+          <p>Nós podemos fazer assim:</p>
+
+          <pre>
+              <code>
+      &lt;p&gt;Na Mozilla, somos uma comunidade global de&lt;/p&gt;    
+      &lt;ul&gt;
+        &lt;li&gt;tecnólogos&lt;/li&gt;
+        &lt;li&gt;pensadores&lt;/li&gt;
+        &lt;li&gt;construtores&lt;/li&gt;
+      &lt;ul&gt;
+  
+      &lt;p&gt;trabalhando juntos ... &lt;p&gt;
+              </code>
+            </pre>
+        </article>
+      </section>
+
+      <hr />
+
+      <section class="main-section" id="links">
+        <header><h2>Links</h2></header>
+        <article>
+          <p>
+            Links são muito importantes — eles são o que faz da web ser de fato
+            uma REDE! Para adicionar um link, precisamos usar um elemento
+            simples — <code>&lt;a&gt;</code> — "a" é a forma abreviada de
+            "âncora". Para transformar o texto do seu parágrafo em um link, siga
+            estas etapas:
+          </p>
+
+          <ol>
+            <li>
+              Escolha algum texto. Nós escolhemos o texto "Mozilla Manifesto".
+            </li>
+            <li>
+              Envolva o texto em um elemento <code>&lt;a&gt;</code> , assim:
+            </li>
+            <pre>
+              <code>
+  &lt;a&gt;Mozilla Manifesto&lt;/a&gt;    
+              </code>
+            </pre>
+
+            <li>
+              Dê ao elemento <code>&lt;a&gt;</code> um atributo href, assim:
+            </li>
+            <pre>
+              <code>
+    &lt;a href=""&gt;Mozilla Manifesto&lt;/a&gt;    
+              </code>
+            </pre>
+
+            <li>
+              Preencha o valor desse atributo com o endereço da Web que você
+              deseja vincular o link:
+            </li>
+            <pre>
+              <code>
+    &lt;a href="https://www.mozilla.org/pt-BR/about/manifesto/"&gt;Mozilla Manifesto&lt;/a&gt;    
+              </code>
+            </pre>
+          </ol>
+
+          <p>
+            Você pode obter resultados inesperados se omitir a parte
+            <code>https://</code> ou o <code>http://</code>, o chamado
+            protocolo, no começo do endereço web. Então depois de criar um link,
+            clique nele para ter certeza de que ele está indo para onde você
+            deseja.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
